@@ -27,6 +27,7 @@ export class NotesService {
     const note = await this.findOne(id);
     note.title = updateNoteDto.title || note.title;
     note.content = updateNoteDto.content || note.content;
+    note.archived = "archived" in updateNoteDto ? updateNoteDto.archived : note.archived;
     return note.save();
   }
 

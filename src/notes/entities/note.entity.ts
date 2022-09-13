@@ -14,6 +14,12 @@ export class Note extends Model{
     @Column
     content: string;
 
+    @Column({
+        defaultValue: false,
+        allowNull: false
+    })
+    archived: boolean;
+
     @CreatedAt
     @Column({ field: 'created_at' })
     createdAt: Date;
